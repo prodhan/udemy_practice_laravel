@@ -46,6 +46,16 @@
             @endif
     </div>
 
+    <div class="form-group {{ $errors->has('photo_id') ? 'has-error' : '' }}">
+         {{ Form::label('photo_id', 'Photo', array('class'=>'control-label'))}}
+         {{ Form::file('photo_id', array('class'=>'form-control'))}}
+            @if($errors->has('photo_id'))
+              <span class="help-block" style="display:block">
+                  <strong>{{ $errors->first('photo_id') }}</strong>
+              </span>
+            @endif
+    </div>
+
     <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
          {{ Form::label('password', 'Password', array('class'=>'control-label'))}}
          {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>''))}}
